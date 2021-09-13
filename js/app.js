@@ -87,33 +87,5 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-//Details load
-const deatils = (id) => {
-  console.log(id);
-  const url = `https://fakestoreapi.com/products/${id}`;
-  console.log(url)
-  fetch(url)
-    .then(res => res.json())
-    .then(json => showDetails(json))
-}
-const showDetails = data => {
- 
-  const div = document.createElement("div");
-  div.classList.add("details");
-  div.innerHTML = `<div class="single-product">
-      <div>
-    <img class="product-image" src=${data.image}></img>
-      </div>
-      <h3>${data.title}</h3>
-      <p>Category: ${data.category}</p>
-      <h2>Price: $ ${data.price}</h2>
-      <div class="span-area">
-      <span class="span">Number of peoples: ${data.rating.count}</span>
-      <span class="span"> rate: ${data.rating.rate}</span>
-      <p class="text">${data.description}</p>
-      </div>
-     </div>
-      `;
-  document.getElementById("details-area").appendChild(div);
 
-}
+
